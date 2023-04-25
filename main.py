@@ -1,4 +1,4 @@
-#Written by bobthedeveloper90368
+#Written by bobthedeveloper90368; https://www.buymeacoffee.com/nottisa
 timetowait = 0.5 #Time to wait in beetween each button click (In Seconds)
 
 ###IMPORTS###
@@ -22,7 +22,7 @@ def locateselectiondot():
 
 
 while True:
-    locatenextbutton()
+    print(locatenextbutton())
     time.sleep(timetowait)
-    locateselectiondot()
+    print(locateselectiondot())
     time.sleep(timetowait)
