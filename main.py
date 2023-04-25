@@ -2,27 +2,27 @@
 timetowait = 0.5 #Time to wait in beetween each button click (In Seconds)
 
 ###IMPORTS###
-#import pyautogui
+import pyautogui, time
 
 def locatenextbutton():
     try:
-        location = pyautogui.locateOnScreen('./images/Nextbutton.png', confidence=0.9)
+        pyautogui.click('./images/Nextbutton.png')
     except:
-        return False, False
-    else: 
-        return pyautogui.center(location)[0], pyautogui.center(location)[1]
+        return False
+    else:
+        return True
 
 def locateselectiondot():
     try:
-        location = pyautogui.locateOnScreen('./images/Selectiondot.png', confidence=0.9)
+        pyautogui.click('./images/Selectiondot.png')
     except:
-        return False, False
+        return False
     else: 
-        return pyautogui.center(location)[0], pyautogui.center(location)[1]
+        return True
 
 
 while True:
-    pass
-#im2 = pyautogui.screenshot('./my_screenshot.png')
-#location = pyautogui.locateOnScreen('./images/Nextbutton')
-#pyautogui.click('calc7key.png')
+    locatenextbutton()
+    time.sleep(timetowait)
+    locateselectiondot()
+    time.sleep(timetowait)
