@@ -5,24 +5,22 @@ timetowait = 0.5 #Time to wait in beetween each button click (In Seconds)
 import pyautogui, time
 
 def locatenextbutton():
-    try:
-        pyautogui.click('./images/Nextbutton.png')
-    except:
-        return False
-    else:
-        return True
+    t = pyautogui.locateCenterOnScreen("./images/Selectiondot.png", grayscale=True)
+    if not t == None:
+        x, y = t
+        pyautogui.moveTo(x,y)
+        pyautogui.click()
 
 def locateselectiondot():
-    try:
-        pyautogui.click('./images/Selectiondot.png')
-    except:
-        return False
-    else: 
-        return True
+    t = pyautogui.locateCenterOnScreen("./images/Selectiondot.png", grayscale=True)
+    if not t == None:
+        x, y = t
+        pyautogui.moveTo(x,y)
+        pyautogui.click()
 
 
 while True:
-    print(locatenextbutton())
+    locatenextbutton()
     time.sleep(timetowait)
-    print(locateselectiondot())
+    locateselectiondot()
     time.sleep(timetowait)
