@@ -13,4 +13,4 @@ def clickimage(toclick):
 
 while True:
     #To add an image simply pass in the image path via the function below. Copy the function below to click another image.
-    clickimage("./images/test.png")
+    clickimage("./test.png")
